@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<head> <title> palindrome checker</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script> 
+function unhide()
+{
+const clear=document.getElementById("clear")
+clear.classList.remove("hide");
+
+}
+
+function palicheck()
+{
+const input=document.getElementById("input").value
+const result= document.getElementById("result")
+const ori=input.replaceAll(" ","")
+const rev=ori.split("").reverse().join("")
+if(input!="")
+{
+	if(ori==rev)
+	{
+		result.style.marginBottom="20px";
+		result.innerHTML="The given input is palindrome";
+
+	}
+	else{
+		result.style.marginBottom="20px";
+		result.innerHTML="The given input is Not a Palindrome"
+	}
+	}
+}
+
+function clr()
+{
+	input.value="";
+	result.innerHTML="";
+
+}
+
+
+</script>
+
+</head>
+<body>
+
+<div class="box"><br>
+<h2> palindrome checker</h2>
+<div class="input-box"><input id="input" oninput="unhide()"  placeholder="Enter your text">
+
+<button id="clear" class="hide" onclick="clr()">X</button></div>
+
+<button id="btn" onclick="palicheck()">check</button>
+
+<div id="result"></div>
+
+</div>
+</body>
+</html>
